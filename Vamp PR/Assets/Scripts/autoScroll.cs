@@ -9,8 +9,8 @@ public class autoScroll : MonoBehaviour
     {
         float step = ScrollSpeed;
 
-        var cameraPosition = Camera.main.gameObject.transform.position;
+        var cameraPosition = transform.position;
         cameraPosition.x += step;
-        Camera.main.gameObject.transform.position = cameraPosition;
+        transform.position = cameraPosition;
     }
 }
