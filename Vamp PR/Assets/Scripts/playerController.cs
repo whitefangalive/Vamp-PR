@@ -6,6 +6,8 @@ public class playerController : MonoBehaviour
 {
     // Start is called before the first frame update
     public float jumpForce;
+    public float moveSpeed = 1;
+    public float currentSpeed = 1;
     private bool isJumping = false;
     public float checkRadius;
     public Transform ceilingCheck;

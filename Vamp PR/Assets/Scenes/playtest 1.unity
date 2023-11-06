@@ -2244,6 +2244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 175
+  moveSpeed: 1
+  currentSpeed: 1
   checkRadius: 0.2
   ceilingCheck: {fileID: 1526639762005230780}
   groundCheck: {fileID: 7545789750241768697}
@@ -2306,7 +2308,7 @@ GameObject:
   - component: {fileID: 8553954320535275476}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
