@@ -22,13 +22,14 @@ public class playerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        currentSpeed = rb.velocity.magnitude;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObject);
         if (isJumping == true)
         {
             rb.AddForce(new Vector2(0, jumpForce));
         }
         isJumping = false;
-
+        rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
 
     }
     private void Update()
