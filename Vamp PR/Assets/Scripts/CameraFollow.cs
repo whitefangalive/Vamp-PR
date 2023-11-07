@@ -8,13 +8,22 @@ public class CameraFollow : MonoBehaviour
     // Smoothness of camera follow. Higher values make it smoother, but too high may cause lag.
     public float smoothSpeed = 5.0f;
 
+    void Start()
+    {
+        transform.position = target.position + offset;
+    }
+
     void LateUpdate()
     {
         if (target != null)
         {
+            // if (Vector3.Distance(transform.position, target.position + offset) < smoothSpeed) return;
+            // Vector3 desiredPosition = target.position + offset;
+            // Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
             Vector3 desiredPosition = target.position + offset;
-            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-            transform.position = smoothedPosition;
+            float lerpedX = Mathf.Lerp(transform.position.x, desiredPosition.x, smoothSpeed * Time.deltaTime);
+            Vector3 lerpedVector = new Vector3(lerpedX, transform.position.y, transform.position.z);
+            transform.position = lerpedVector;
         }
     }
 }

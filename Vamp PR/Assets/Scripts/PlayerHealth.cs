@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("Hazard"))
         {
-            Debug.Log("Die");
+            // Debug.Log("Die");
             playerSpawner.PlayerDeath();
             Destroy(gameObject);
             // PlayerSpawner.SpawnPlayer();
