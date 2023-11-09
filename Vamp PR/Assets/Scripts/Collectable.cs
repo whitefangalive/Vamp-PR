@@ -11,12 +11,6 @@ public class Collectable : MonoBehaviour
     {
         scoreKeeper = GameObject.FindGameObjectWithTag("ScoreKeeper");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     
     public void OnTriggerEnter2D(Collider2D other)
     {

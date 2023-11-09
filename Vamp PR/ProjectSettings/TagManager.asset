@@ -7,6 +7,8 @@ TagManager:
   - Hazard
   - Litter
   - ScoreKeeper
+  - Background
+  - Collectable
   layers:
   - Default
   - TransparentFX

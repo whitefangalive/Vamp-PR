@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ObstacleSpawner : MonoBehaviour
+public class CollectableSpawner : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public GameObject collectablePrefab;
     public Transform player;
     public float spawnInterval = 2.0f;
     public float spawnOffset = 10.0f; // How far ahead of the player to spawn obstacles
@@ -26,14 +26,14 @@ public class ObstacleSpawner : MonoBehaviour
             Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset, 0, 0);
 
             // Spawn the obstacle at the calculated position.
-            Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+            Instantiate(collectablePrefab, spawnPosition, Quaternion.identity);
 
             // Update the next spawn time.
             nextSpawnTime = Time.time + spawnInterval;
         }
 
         // Remove obstacles that have moved far enough behind the player
-        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Hazard");
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Litter");
         foreach (GameObject obstacle in obstacles)
         {
             if (obstacle.transform.position.x < player.position.x - despawnOffset)

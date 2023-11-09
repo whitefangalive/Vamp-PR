@@ -1,26 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Parallax : MonoBehaviour
 {
-    private GameObject Player;
+    private GameObject player;
     public float depth = 1;
-    private float delta = 0;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Player != null)
+        if (player != null)
         {
-            delta = Player.GetComponent<playerController>().currentSpeed * Time.deltaTime;
-            transform.position += new Vector3(delta * depth, 0f, 0f);
+            // Get the player's current speed
+            float playerSpeed = player.GetComponent<playerController>().currentSpeed;
+
+            // Calculate the movement based on player speed and depth
+            float movement = -playerSpeed * Time.deltaTime * (1 / depth);
+
+            // Update the object's position
+            transform.position += new Vector3(movement, 0f, 0f);
         }
     }
 }
