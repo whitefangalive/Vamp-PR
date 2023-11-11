@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        transform.position = target.position + offset;
+        transform.position = offset;
     }
 
     void LateUpdate()
@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour
             Vector3 desiredPosition = target.position + offset;
             float lerpedX = Mathf.Lerp(transform.position.x, desiredPosition.x, smoothSpeed * Time.deltaTime);
             Vector3 lerpedVector = new Vector3(lerpedX, transform.position.y, transform.position.z);
-            transform.position = lerpedVector;
+            transform.position = new Vector3(desiredPosition.x, transform.position.y, transform.position.z);;
         }
     }
 }
