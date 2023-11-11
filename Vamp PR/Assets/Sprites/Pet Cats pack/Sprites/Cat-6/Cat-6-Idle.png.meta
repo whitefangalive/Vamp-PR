@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 18219aa284b788747be121329395a0a5
+guid: 18e6d971025d9054d8abb92dac9d0c13
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,13 +103,27 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat-2-Stretching_0
+      name: Cat-6-Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b37b914a06758844ab41ec2c653c6fd7
-      internalID: -1970771901
+      spriteID: 1fa79dd919876944880ef0c38e28910d
+      internalID: -926048052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_1
+      name: Cat-6-Idle_1
       rect:
         serializedVersion: 2
         x: 50
@@ -139,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa9ffa5c9d3e953419dc946d63b2b919
-      internalID: -1909405600
+      spriteID: 2f71f1b1ea5f1ef4daa1b3c3acfeb57a
+      internalID: 357554607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_2
+      name: Cat-6-Idle_2
       rect:
         serializedVersion: 2
         x: 100
@@ -160,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6b8cff0ff089344b119d81b4db95a2
-      internalID: 361907521
+      spriteID: 196ff8e58fec2064e8fec8b7396dfe7e
+      internalID: -1869711824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_3
+      name: Cat-6-Idle_3
       rect:
         serializedVersion: 2
         x: 150
@@ -181,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89e38ecb7cfa8c740b5641cefe14ba7a
-      internalID: 1656548104
+      spriteID: fe63bb6da466e7647a12573b6bac05fe
+      internalID: 1263529980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_4
+      name: Cat-6-Idle_4
       rect:
         serializedVersion: 2
         x: 200
@@ -202,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d049b247976bf60408c3845ba8afb068
-      internalID: -1209266214
+      spriteID: 61ba915d4a98de14784c4d07373e34f2
+      internalID: 1249789058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_5
+      name: Cat-6-Idle_5
       rect:
         serializedVersion: 2
         x: 250
@@ -223,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b8d4f1993ea3624db8f7dbff340d7e5
-      internalID: -137547759
+      spriteID: 6bc89276313b8f049a17761950e933c4
+      internalID: 1119224293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_6
+      name: Cat-6-Idle_6
       rect:
         serializedVersion: 2
         x: 300
@@ -244,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b03cec6b690c714882f60fc3aed583e
-      internalID: -464869417
+      spriteID: ec83e9a2d91ee8c46a305fa8f20b353f
+      internalID: 687488154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_7
+      name: Cat-6-Idle_7
       rect:
         serializedVersion: 2
         x: 350
@@ -265,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c7b8a4efe9903a42a01bc24451cda97
-      internalID: -943542544
+      spriteID: 13d1f36b073ba384687f050df766db33
+      internalID: -220965732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_8
+      name: Cat-6-Idle_8
       rect:
         serializedVersion: 2
         x: 400
@@ -286,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff5e9860e0be7da4bac1399d8482ddcd
-      internalID: 2049464450
+      spriteID: 1a00e8e966b3b0e4d8dfb11700856865
+      internalID: -300686502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat-2-Stretching_9
+      name: Cat-6-Idle_9
       rect:
         serializedVersion: 2
         x: 450
@@ -307,71 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c050eb952b4675c44abd6583ff77d63c
-      internalID: 77355957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat-2-Stretching_10
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36d998aa2f5e3cb43aaba2e8730a87e5
-      internalID: 783669149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat-2-Stretching_11
-      rect:
-        serializedVersion: 2
-        x: 550
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 478aa6218d9da7246ae27cdcdac59752
-      internalID: -676696049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat-2-Stretching_12
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 0
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2e2a51a7e9726b439ff94d198d1fba1
-      internalID: -969850890
+      spriteID: 0f0a34f15907327498c589654a6e3fec
+      internalID: 1227703020
       vertices: []
       indices: 
       edges: []
@@ -387,22 +343,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cat-2-Stretching_2: 361907521
-      Cat-2-Stretching_0: -1970771901
-      Cat-2-Stretching_4: -1209266214
-      Cat-2-Stretching_7: -943542544
-      Cat-2-Stretching_10: 783669149
-      Cat-2-Stretching_9: 77355957
-      Cat-2-Stretching_5: -137547759
-      Cat-2-Stretching_8: 2049464450
-      Cat-2-Stretching_11: -676696049
-      Cat-2-Stretching_3: 1656548104
-      Cat-2-Stretching_1: -1909405600
-      Cat-2-Stretching_12: -969850890
-      Cat-2-Stretching_6: -464869417
-  spritePackingTag: 
+      Cat-6-Idle_0: -926048052
+      Cat-6-Idle_1: 357554607
+      Cat-6-Idle_2: -1869711824
+      Cat-6-Idle_3: 1263529980
+      Cat-6-Idle_4: 1249789058
+      Cat-6-Idle_5: 1119224293
+      Cat-6-Idle_6: 687488154
+      Cat-6-Idle_7: -220965732
+      Cat-6-Idle_8: -300686502
+      Cat-6-Idle_9: 1227703020
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
