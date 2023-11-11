@@ -15,7 +15,7 @@ public class Parallax : MonoBehaviour
         if (player != null)
         {
             // Get the player's current speed
-            float playerSpeed = player.GetComponent<playerController>().currentSpeed;
+            float playerSpeed = player.GetComponent<PlayerMovement>().currentSpeed;
 
             // Calculate the movement based on player speed and depth
             float movement = -playerSpeed * Time.deltaTime * (1 / depth);
