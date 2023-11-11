@@ -97,4 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c736d4da6d51ecc479a56d717613dde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depth: 10
+  depth: 2
+  speedVector: {fileID: 11400000, guid: d1cdf48076293574ca51caf15886b699, type: 2}

@@ -37,6 +37,7 @@ public class InfiniteRoad : MonoBehaviour
     private void SpawnRoadSegment(float xPosition)
     {
         GameObject newSegment = Instantiate(roadSegmentPrefab, new Vector3(xPosition, 0, 0), Quaternion.identity);
+        newSegment.transform.SetParent(this.transform);
         if (roadSegments[roadSegments.Length - 1] != null)
         {
             // this is when the list is full

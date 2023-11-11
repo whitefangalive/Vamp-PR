@@ -1,11 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic; // Import the namespace for Lists
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public List<GameObject> obstaclePrefabs; // Serialized list of obstacle prefabs
     public Transform player;
     public float spawnInterval = 2.0f;
-    public float spawnOffset = 10.0f; // How far ahead of the player to spawn obstacles
+    public Vector3 spawnOffset; // How far ahead of the player to spawn obstacles
     public float despawnOffset = 20.0f;
 
     private float nextSpawnTime;
@@ -22,11 +23,13 @@ public class ObstacleSpawner : MonoBehaviour
         if (Time.time >= nextSpawnTime)
         {
             // Calculate the position to spawn the obstacle.
-            
-            Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset, 0, 0);
+            Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset.x, spawnOffset.y, spawnOffset.z);
 
-            // Spawn the obstacle at the calculated position.
-            Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+            // Randomly select an obstacle prefab from the list
+            GameObject selectedObstacle = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Count)];
+
+            // Spawn the selected obstacle at the calculated position.
+            Instantiate(selectedObstacle, spawnPosition, Quaternion.identity);
 
             // Update the next spawn time.
             nextSpawnTime = Time.time + spawnInterval;

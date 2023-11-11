@@ -9,9 +9,12 @@ public class ParallaxSpawner : MonoBehaviour
 
     private Transform player;
     [SerializeField] private GameObject[] parallaxSegments;
+    [SerializeField] private int maxLayerDepth;
+    [SerializeField] private int orderInLayer = 0;
 
     private void Start()
     {
+        orderInLayer = maxLayerDepth;
         player = Camera.main.transform; // Assuming the camera follows the player
         parallaxSegments = new GameObject[numberOfSegments];
 
@@ -38,6 +41,18 @@ public class ParallaxSpawner : MonoBehaviour
     {
         GameObject newSegment = Instantiate(parallaxLayerPrefab, new Vector3(xPosition, transform.position.y, 0), Quaternion.identity);
         newSegment.transform.SetParent(this.transform);
+
+        // Handle order in layer
+        // Set the order in layer based on the orderInLayer variable
+        SpriteRenderer spriteRenderer = newSegment.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sortingOrder = orderInLayer;
+            orderInLayer--;
+            if (orderInLayer < (maxLayerDepth - numberOfSegments)) orderInLayer = maxLayerDepth;
+        }
+
+        // Update array
         if (parallaxSegments[parallaxSegments.Length - 1] != null)
         {
             // this is when the list is full
@@ -56,6 +71,7 @@ public class ParallaxSpawner : MonoBehaviour
                 }
             }
         }
+
     }
 
     private void DestroyParallaxSegment(int index)
