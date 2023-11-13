@@ -163,6 +163,7 @@ Transform:
   m_Children:
   - {fileID: 5681287220579633346}
   - {fileID: 8554932570834759850}
+  - {fileID: 5894256333019054455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1591761036777887750
@@ -231,30 +232,30 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 5216134426849518793}
     m_ColliderPaths:
-    - - X: 4531250
-        Y: 21875000
-      - X: -19843750
-        Y: 21875000
-      - X: -19843750
+    - - X: 2446875
+        Y: 11812501
+      - X: -10715625
+        Y: 11812501
+      - X: -10715625
         Y: 0
-      - X: 4531250
+      - X: 2446875
         Y: 0
   - m_Collider: {fileID: 9067814272817820985}
     m_ColliderPaths:
-    - - X: 23437500
-        Y: 21875000
-      - X: -937500
-        Y: 21875000
-      - X: -937500
+    - - X: 12656250
+        Y: 11812501
+      - X: -506250
+        Y: 11812501
+      - X: -506250
         Y: 0
-      - X: 23437500
+      - X: 12656250
         Y: 0
   m_CompositePaths:
     m_Paths:
-    - - {x: 2.343721, y: 0}
-      - {x: 2.343721, y: 2.1875}
-      - {x: -1.984375, y: 2.187471}
-      - {x: -1.9843457, y: 0}
+    - - {x: 1.2655957, y: 0}
+      - {x: 1.2655957, y: 1.1812501}
+      - {x: -1.0715625, y: 1.1812208}
+      - {x: -1.0715332, y: 0}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -332,7 +333,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 078bb4e467b224fb98c30fb8faf940a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -389,3 +390,73 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4375, y: 2.1875}
   m_EdgeRadius: 0
+--- !u!1001 &8514527550154791171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5596395169560522760}
+    m_Modifications:
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050481990754311666, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: -353876145, guid: 826c1fd0aa3da5849b78a98ceeba5b7c, type: 3}
+    - target: {fileID: 3050481990754311666, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: obstaclePoints
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655067936404284068, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_Name
+      value: ObstacleDodgedTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+--- !u!4 &5894256333019054455 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+  m_PrefabInstance: {fileID: 8514527550154791171}
+  m_PrefabAsset: {fileID: 0}

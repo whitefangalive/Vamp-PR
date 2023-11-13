@@ -9,6 +9,7 @@ TagManager:
   - ScoreKeeper
   - Background
   - Collectable
+  - ObstacleDodgedTrigger
   layers:
   - Default
   - TransparentFX

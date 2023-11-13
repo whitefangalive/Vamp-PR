@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.54, y: 0.54, z: 0.54}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 7270420878365559129}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2344017141947844936
@@ -130,3 +131,73 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.875}
   m_EdgeRadius: 0
+--- !u!1001 &4828015011578401069
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6975214344056702639}
+    m_Modifications:
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050481990754311666, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: -1649272686, guid: 826c1fd0aa3da5849b78a98ceeba5b7c, type: 3}
+    - target: {fileID: 3050481990754311666, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: obstaclePoints
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655067936404284068, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_Name
+      value: ObstacleDodgedTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+--- !u!4 &7270420878365559129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2874764779819522164, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+  m_PrefabInstance: {fileID: 4828015011578401069}
+  m_PrefabAsset: {fileID: 0}
