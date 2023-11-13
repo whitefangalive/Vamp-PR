@@ -5,6 +5,12 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Collectable : MonoBehaviour
 {
+    // private GameObject scoreKeeper;
+    // Start is called before the first frame update
+    void Start()
+    {
+        // scoreKeeper = GameObject.FindGameObjectWithTag("ScoreKeeper");
+    }
     
     public void OnTriggerEnter2D(Collider2D other)
     {
