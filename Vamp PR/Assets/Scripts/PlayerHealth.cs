@@ -5,10 +5,17 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     private PlayerSpawner playerSpawner;
+    private SpriteRenderer sr;
+    private AudioManager playerAudio;
+
+    private PlayerMovement playerMovement;
 
     void Awake()
     {
-        playerSpawner = gameObject.GetComponent<PlayerSpawner>();
+        playerSpawner =GetComponent<PlayerSpawner>();
+        sr = GetComponentInChildren<SpriteRenderer>();
+        playerAudio = GetComponent<AudioManager>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -17,7 +24,11 @@ public class PlayerHealth : MonoBehaviour
         {
             // Debug.Log("Die");
             playerSpawner.PlayerDeath();
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            playerAudio.Play("Death");
+            sr.enabled = false;
+            // playerMovement.enabled = false;
+            playerMovement.Die();
             // PlayerSpawner.SpawnPlayer();
         }
         
