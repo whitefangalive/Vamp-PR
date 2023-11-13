@@ -2748,6 +2748,7 @@ MonoBehaviour:
   jumpHeight: 12
   fallSpeed: 30
   jumpSpeed: 27
+  isGrounded: 0
 --- !u!114 &6843631113066029779
 MonoBehaviour:
   m_ObjectHideFlags: 0

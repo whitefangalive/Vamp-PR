@@ -6,19 +6,22 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class CollectableOldManCrossing : MonoBehaviour
 {
-    private GameObject scoreKeeper;
     private bool walking = true;
     public float speed = 1f;
-    public int scoreIncrease = 1;
     private bool failed = false;
     public Transform end;
     private Animator animator;
     private bool fallingOver = false;
     public float xOffset = 0;
+    public int obstaclePoints = 10;
+    public Sprite icon;
+
+    public int minValue = 0;
+    public int maxValue = 9;
+    public float lowProbability = 0.8f;
     // Start is called before the first frame update
     void Start()
     {
-        scoreKeeper = GameObject.FindGameObjectWithTag("ScoreKeeper");
         animator = GetComponent<Animator>();
     }
     private void UpdateaAnimation()
@@ -52,7 +55,7 @@ public class CollectableOldManCrossing : MonoBehaviour
                 transform.position = new Vector2(other.transform.position.x + xOffset, transform.position.y);
                 if (transform.position.x >= end.position.x)
                 {
-                    scoreKeeper.GetComponent<Score>().score += scoreIncrease;
+                    other.gameObject.GetComponent<PlayerScoreCounter>().DodgeObstacle(icon, (obstaclePoints + GenerateRandomNumber()));
                     walking = false;
                     failed = true;// but not actually
                 }
@@ -65,6 +68,22 @@ public class CollectableOldManCrossing : MonoBehaviour
                 UpdateaAnimation();
                 fallingOver = true;
             }
+        }
+    }
+    private int GenerateRandomNumber()
+    {
+        float randomValue = UnityEngine.Random.value;
+
+        // Apply probability distribution
+        if (randomValue < lowProbability)
+        {
+            // Generate a low number with higher probability
+            return UnityEngine.Random.Range(minValue, (minValue + maxValue) / 2 + 1);
+        }
+        else
+        {
+            // Generate a high number with lower probability
+            return UnityEngine.Random.Range((minValue + maxValue) / 2 + 1, maxValue + 1);
         }
     }
 }

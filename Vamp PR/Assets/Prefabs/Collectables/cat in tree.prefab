@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yOffset: 1
   speed: 0.04
-  obstaclePoints: 10
+  obstaclePoints: 12
   icon: {fileID: 29325209, guid: c8f0e7e1d76fe1c409039ade1ac6c99c, type: 3}
   minValue: 0
   maxValue: 9
