@@ -1,26 +1,28 @@
 using UnityEngine;
-using System.Collections.Generic; // Import the namespace for Lists
+using System.Collections.Generic;
 
 public class ObstacleSpawner : MonoBehaviour
 {
     public List<GameObject> obstaclePrefabs; // Serialized list of obstacle prefabs
     public Transform player;
-    public float spawnInterval = 2.0f;
+    public float spawnDistanceInterval = 5.0f; // Distance between obstacle spawns
     public Vector3 spawnOffset; // How far ahead of the player to spawn obstacles
     public float despawnOffset = 20.0f;
 
-    private float nextSpawnTime;
+    private float nextSpawnDistance;
 
     private void Start()
     {
-        // Initialize the next spawn time.
-        nextSpawnTime = Time.time + spawnInterval;
+        // Initialize the next spawn distance.
+        nextSpawnDistance = player.position.x + spawnDistanceInterval;
     }
 
     private void Update()
     {
         if (player == null) return;
-        if (Time.time >= nextSpawnTime)
+
+        // Check if the player has traveled far enough to spawn a new obstacle
+        if (player.position.x >= nextSpawnDistance)
         {
             // Calculate the position to spawn the obstacle.
             Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset.x, spawnOffset.y, spawnOffset.z);
@@ -31,8 +33,8 @@ public class ObstacleSpawner : MonoBehaviour
             // Spawn the selected obstacle at the calculated position.
             Instantiate(selectedObstacle, spawnPosition, Quaternion.identity);
 
-            // Update the next spawn time.
-            nextSpawnTime = Time.time + spawnInterval;
+            // Update the next spawn distance.
+            nextSpawnDistance += spawnDistanceInterval;
         }
 
         // Remove obstacles that have moved far enough behind the player
