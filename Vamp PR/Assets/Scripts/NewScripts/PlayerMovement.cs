@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float currentSpeed { get; private set; }
 
     private Rigidbody2D rb;
-    private bool isGrounded;
+    public bool isGrounded;
     private float jumpStartTime;
     private float timeToReachApex;
 
