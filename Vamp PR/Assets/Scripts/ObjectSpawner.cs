@@ -7,7 +7,7 @@ public class ObjectSpawner : MonoBehaviour
     public string objectTag;
     public Transform player;
     public float spawnDistanceInterval = 5.0f; // Distance between object spawns
-    public Vector3 spawnOffset; // How far ahead of the player to spawn objects
+    public List<Vector3> spawnOffset; // How far ahead of the player to spawn objects
     public float despawnOffset = 20.0f;
 
     private float nextSpawnDistance;
@@ -34,11 +34,13 @@ public class ObjectSpawner : MonoBehaviour
 
     private void SpawnObject()
     {
-        // Calculate the position to spawn the object.
-        Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset.x, spawnOffset.y, spawnOffset.z);
 
         // Randomly select an object prefab from the list
-        GameObject selectedObject = objectPrefabs[Random.Range(0, objectPrefabs.Count)];
+        int rand = Random.Range(0, objectPrefabs.Count);
+        GameObject selectedObject = objectPrefabs[rand];
+
+        // Calculate the position to spawn the object.
+        Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset[rand].x, spawnOffset[rand].y, spawnOffset[rand].z);
 
         // Spawn the selected object at the calculated position, setting the parent to this transform
         GameObject instantiatedObject = Instantiate(selectedObject, spawnPosition, Quaternion.identity, transform);
