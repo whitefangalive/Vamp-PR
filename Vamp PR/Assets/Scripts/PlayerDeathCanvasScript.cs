@@ -13,5 +13,6 @@ public class PlayerDeathCanvasScript : MonoBehaviour
     public void RespawnButton()
     {
         LevelLoader.instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // GameObject.Find("Player").GetComponent<PlayerSpawner>().SpawnPlayer();
     }
 }

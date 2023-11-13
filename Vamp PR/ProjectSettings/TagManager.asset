@@ -9,6 +9,9 @@ TagManager:
   - ScoreKeeper
   - Background
   - Collectable
+  - ObstacleDodgedTrigger
+  - NPC
+  - Town
   layers:
   - Default
   - TransparentFX

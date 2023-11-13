@@ -13,6 +13,16 @@ public class PlayerMovement : MonoBehaviour
     private float jumpStartTime;
     private float timeToReachApex;
 
+    private bool isDead;
+
+    // Audio
+    private AudioManager playerAudio;
+
+    void Awake()
+    {
+        playerAudio = GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +48,8 @@ public class PlayerMovement : MonoBehaviour
     private void HandleInput()
     {
         // Horizontal movement
-        Vector2 movement = new Vector2(1.0f, 0f);
+        Vector2 movement = new Vector2(isDead ? 0.0f : 1.0f, 0f);
+        Debug.Log(movement);
 
         // Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -53,10 +64,24 @@ public class PlayerMovement : MonoBehaviour
         currentSpeed = Mathf.Abs(rb.velocity.x);
     }
 
+    public void Die()
+    {
+        isDead = true;
+    }
+
+    public void Undie()
+    {
+        isDead = false;
+    }
+
     private void Jump()
     {
         jumpStartTime = Time.time;
         float jumpVelocity = CalculateJumpVelocity();
+
+        if (playerAudio != null) {
+            playerAudio.Play("Jump");
+        }
 
         // Set the vertical velocity for a jump
         rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
