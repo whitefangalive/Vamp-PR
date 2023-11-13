@@ -47,6 +47,7 @@ public class PlayerScoreCounter : MonoBehaviour
     {
         GameObject newPointsObject = Instantiate(gainPointsPrefab, gainedPointsParent.position, Quaternion.identity);
         newPointsObject.transform.SetParent(gainedPointsParent);
+        newPointsObject.transform.localScale = Vector3.one;
         newPointsObject.transform.Find("Text").gameObject.GetComponent<TMP_Text>().text = $"+{points}";
         newPointsObject.transform.Find("Icon").gameObject.GetComponent<Image>().sprite = icon;
 

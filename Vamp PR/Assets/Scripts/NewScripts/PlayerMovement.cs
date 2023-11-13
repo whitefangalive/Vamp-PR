@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Horizontal movement
         Vector2 movement = new Vector2(isDead ? 0.0f : 1.0f, 0f);
+        Debug.Log(movement);
 
         // Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -66,6 +67,11 @@ public class PlayerMovement : MonoBehaviour
     public void Die()
     {
         isDead = true;
+    }
+
+    public void Undie()
+    {
+        isDead = false;
     }
 
     private void Jump()
