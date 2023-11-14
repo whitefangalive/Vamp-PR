@@ -5,15 +5,19 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class CollectableCatInTree : MonoBehaviour
 {
-    private GameObject scoreKeeper;
     private bool stuck = true;
     public float yOffset = 0f;
     public float speed = 1f;
     private Animator animator;
+    public int obstaclePoints;
+    public Sprite icon;
+
+    public int minValue = 57;
+    public int maxValue = 101;
+    public float lowProbability = 0.8f;
     // Start is called before the first frame update
     void Start()
     {
-        scoreKeeper = GameObject.FindGameObjectWithTag("ScoreKeeper");
         animator = GetComponent<Animator>();
     }
     private void Update()
@@ -34,13 +38,30 @@ public class CollectableCatInTree : MonoBehaviour
             }
             else 
             {
-                scoreKeeper.GetComponent<Score>().score++;
+                
                 stuck = false;
                 if (animator != null)
                 {
                     animator.SetBool("stuckIn", stuck);
                 }
+                other.gameObject.GetComponent<PlayerScoreCounter>().DodgeObstacle(icon, (obstaclePoints + GenerateRandomNumber()));
             }
+        }
+    }
+    private int GenerateRandomNumber()
+    {
+        float randomValue = Random.value;
+
+        // Apply probability distribution
+        if (randomValue < lowProbability)
+        {
+            // Generate a low number with higher probability
+            return Random.Range(minValue, (minValue + maxValue) / 2 + 1);
+        }
+        else
+        {
+            // Generate a high number with lower probability
+            return Random.Range((minValue + maxValue) / 2 + 1, maxValue + 1);
         }
     }
 }

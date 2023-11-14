@@ -12,6 +12,7 @@ TagManager:
   - ObstacleDodgedTrigger
   - NPC
   - Town
+  - Chunk
   layers:
   - Default
   - TransparentFX
