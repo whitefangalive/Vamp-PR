@@ -10,11 +10,6 @@ public class SpawnerManager : MonoBehaviour
 
     private float nextSpawnDistance;
 
-    void Awake()
-    {
-
-    }
-
     void Start()
     {
         // Initialize the next spawn distance.
@@ -41,13 +36,7 @@ public class SpawnerManager : MonoBehaviour
         // Special Condition: Old man collectable
         if (coinToss < 0.2f)
         {
-            SpawnGivenObjectFromSpawner("ChunkSpawner", "oldManCrossing");
-        }
-
-        // Special Condition: Spawn Chunk
-        else if(coinToss < 0.2f)
-        {
-            SpawnChunk();
+            SpawnGivenObjectFromSpawner("CollectableSpawner", "oldManCrossing");
         }
         else
         {
@@ -64,11 +53,12 @@ public class SpawnerManager : MonoBehaviour
         foreach(GameObject spawner in spawnerList)
         {
             if(spawner.name == "ChunkSpawner") continue;
+            // if(spawner.name == "Collectable") SpawnGivenObjectFromSpawner(ignore: "oldManCrossing");
             SpawnGivenObjectFromSpawner(spawnerName: spawner.name);
         }
     }
 
-    private void SpawnGivenObjectFromSpawner(string spawnerName="default", string objectName="None")
+    private void SpawnGivenObjectFromSpawner(string spawnerName="default", string objectName="default")
     {
 
         // The spawner to activate
@@ -100,42 +90,6 @@ public class SpawnerManager : MonoBehaviour
     {
         // Randomly select an object prefab from the list
         return spawnerList[Random.Range(0, spawnerList.Count)];
-    }
-
-    private void SpawnChunk(string chunkName="None")
-    {
-        foreach (GameObject spawner in spawnerList)
-        {
-            if (spawner.name == "ChunkSpawner") spawner.GetComponent<ObjectSpawner>().SpawnObject(chunkName);
-        }
-
-
-        // if (chunkName != "None") SpawnGivenChunk(chunkName);
-
-        // foreach (GameObject spawner in spawnerList)
-        // {
-        //     if (spawner.name == "ChunkSpawner") spawner.GetComponent<ObjectSpawner>().SpawnObject();
-        // }
-
-    }
-
-    private void SpawnGivenChunk(string chunkName="")
-    {
-        foreach (GameObject spawner in spawnerList)
-        {
-            if (spawner.name == "ChunkSpawner") spawner.GetComponent<ObjectSpawner>().SpawnObject(chunkName);
-        }
-    }
-
-    private void SpawnOldManChunk()
-    {
-        foreach (GameObject spawner in spawnerList)
-        {
-            if (spawner.name == "ObstacleSpawner") continue;
-            if (spawner.name == "ChunkSpawner") spawner.GetComponent<ObjectSpawner>().SpawnObject("oldManCrossing");
-            // Tell collectable spawner to spawn an old man
-            spawner.GetComponent<ObjectSpawner>().SpawnObject();
-        }
     }
 
     private float GetAverageSpawnDistanceInterval()
