@@ -10,6 +10,11 @@ public class SpawnerManager : MonoBehaviour
 
     private float nextSpawnDistance;
 
+    void Awake()
+    {
+
+    }
+
     void Start()
     {
         // Initialize the next spawn distance.
@@ -36,17 +41,11 @@ public class SpawnerManager : MonoBehaviour
         // Special Condition: Old man collectable
         if (coinToss < 0.2f)
         {
-            SpawnGivenObjectFromSpawner("ChunkSpawner", "oldManCrossing");
+            SpawnGivenObjectFromSpawner("CollectableSpawner", "oldManCrossing");
             SpawnGivenObjectFromSpawner(spawnerName: "TownSpawner");
-            SpawnGivenObjectFromSpawner(spawnerName: "CollectableSpawner");
+            SpawnGivenObjectFromSpawner(spawnerName: "NPCSpawner");
 
         }
-
-        // Special Condition: Spawn Chunk
-        // else if(coinToss < 0.2f)
-        // {
-        //     SpawnChunk();
-        // }
         else
         {
             NormalConditionSpawn();
@@ -68,7 +67,7 @@ public class SpawnerManager : MonoBehaviour
         }
     }
 
-    private void SpawnGivenObjectFromSpawner(string spawnerName="default", string objectName="None")
+    private void SpawnGivenObjectFromSpawner(string spawnerName="default", string objectName="default")
     {
 
         // The spawner to activate

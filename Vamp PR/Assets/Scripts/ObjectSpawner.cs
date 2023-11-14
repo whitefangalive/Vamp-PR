@@ -15,7 +15,6 @@ public class ObjectSpawner : MonoBehaviour
     private void Start()
     {
         // Initialize the next spawn distance.
-        SpawnObject();
         nextSpawnDistance = player.position.x + spawnDistanceInterval;
     }
 
@@ -23,22 +22,13 @@ public class ObjectSpawner : MonoBehaviour
     {
         if (player == null) return;
 
-        // Check if the player has traveled far enough to spawn a new object
-        if (player.position.x >= nextSpawnDistance)
-        {
-            SpawnObject();
-        }
-
         DespawnObject();
     }
 
     public void SpawnObject(string objectName="default")
     {
-        // Calculate the position to spawn the object.
-        Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset.x, spawnOffset.y, spawnOffset.z);
-
         GameObject selectedObject;
-        if (objectName == "default")
+        if(objectName == "default")
         {
             // Randomly select an object prefab from the list
             selectedObject = objectPrefabs[Random.Range(0, objectPrefabs.Count)];
@@ -47,16 +37,16 @@ public class ObjectSpawner : MonoBehaviour
         {
             selectedObject = objectPrefabs.Find(s => s.name == objectName);
         }
-        
+
+        float randomXOffset = Random.Range(-20f, 20f); // Adjust the range as needed
+        Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset.x + randomXOffset, spawnOffset.y, spawnOffset.z);
+
 
         // Spawn the selected object at the calculated position, setting the parent to this transform
         GameObject instantiatedObject = Instantiate(selectedObject, spawnPosition, Quaternion.identity, transform);
 
         // Update the next spawn distance.
-        nextSpawnDistance += spawnDistanceInterval;
     }
-
-
 
     private void DespawnObject()
     {
