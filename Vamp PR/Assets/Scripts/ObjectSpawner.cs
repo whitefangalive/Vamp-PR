@@ -38,7 +38,7 @@ public class ObjectSpawner : MonoBehaviour
             selectedObject = objectPrefabs.Find(s => s.name == objectName);
         }
 
-        float randomXOffset = Random.Range(-20f, 20f); // Adjust the range as needed
+        float randomXOffset = Random.Range(-5f, 5f); // Adjust the range as needed
         Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset.x + randomXOffset, spawnOffset.y, spawnOffset.z);
 
 

@@ -10,11 +10,6 @@ public class SpawnerManager : MonoBehaviour
 
     private float nextSpawnDistance;
 
-    void Awake()
-    {
-
-    }
-
     void Start()
     {
         // Initialize the next spawn distance.
