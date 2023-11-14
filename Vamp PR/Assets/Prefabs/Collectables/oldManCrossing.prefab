@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3519109281717507100}
   m_Layer: 0
   m_Name: oldManCrossing
-  m_TagString: Untagged
+  m_TagString: Chunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 2574125311052972295}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.252968, y: -6.031096, z: 0.11620298}
+  m_LocalPosition: {x: -4.25, y: 0, z: 0.125}
   m_LocalScale: {x: 1.5126, y: 1.5126, z: 1.5126}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -229,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 7268751611954705021}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.58841, y: -2.6430674, z: 0.10441198}
+  m_LocalPosition: {x: 17.5625, y: 0, z: 0.125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -316,7 +316,7 @@ Transform:
   m_GameObject: {fileID: 7799887954888537232}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.06, y: -5.89, z: 0.10441198}
+  m_LocalPosition: {x: -4.0625, y: 0, z: 0.125}
   m_LocalScale: {x: 1.3380586, y: 1.3380586, z: 1.3380586}
   m_ConstrainProportionsScale: 0
   m_Children: []
