@@ -10,13 +10,14 @@ public class PlayerScoreCounter : MonoBehaviour
     public int playerScore;
     public GameObject scoreCanvas;
     public GameObject gainPointsPrefab;
+    public int minValue = 57;
+    public int maxValue = 101;
+    public float lowProbability = 0.8f;
 
     private TMP_Text scoreText;
     private Transform gainedPointsParent;
 
-    public int minValue = 57;
-    public int maxValue = 101;
-    public float lowProbability = 0.8f;
+    private AudioManager audioManager;
 
     // private int 
 
@@ -24,6 +25,7 @@ public class PlayerScoreCounter : MonoBehaviour
     {
         scoreText = scoreCanvas.transform.Find("Score").gameObject.GetComponent<TMP_Text>();
         gainedPointsParent = scoreCanvas.transform.Find("GainPointsParent");
+        audioManager = GetComponent<AudioManager>();
     }
 
     void Start()
@@ -41,6 +43,7 @@ public class PlayerScoreCounter : MonoBehaviour
     public void AddPoints(int pointsAmount=10)
     {
         playerScore+=pointsAmount;
+        audioManager.Play("Points");
     }
 
     public IEnumerator DisplayGainedPoints(int points, Sprite icon)
@@ -54,8 +57,6 @@ public class PlayerScoreCounter : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         Destroy(newPointsObject);
-
-
     }
 
     // public void OnTriggerEnter2D(Collider2D other)

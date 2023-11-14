@@ -10,6 +10,13 @@ public class NPCBehavior : MonoBehaviour
     private float timeToIdle = 3f; // Adjust this to control how long the NPC stands still or walks
     public float walkSpeed = 2f; // Adjust this to control the walking speed
 
+    private AudioManager audioManager;
+
+    void Awake()
+    {
+        audioManager = GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         // Get the Animator component attached to the NPC GameObject
@@ -99,4 +106,20 @@ public class NPCBehavior : MonoBehaviour
         // The NPC is moved in SetWalkingState, so this method is empty
         // It's here to maintain a consistent structure with the 3D version
     }
+
+    public void OnPlayerPassed()
+    {
+        // Generate a random value to determine whether to play the sound
+        float randomValue = Random.value;
+
+        // Adjust this threshold to control the probability of playing the sound
+        float soundProbability = 0.9f;
+
+        if (randomValue < soundProbability)
+        {
+            // Play the sound only if the random value is below the threshold
+            audioManager.Play("Dialogue");
+        }
+    }
+
 }

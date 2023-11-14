@@ -2659,13 +2659,20 @@ MonoBehaviour:
   sounds:
   - name: Jump
     clip: {fileID: 8300000, guid: d16e6a27a3f3ba544906897ae169e4c3, type: 3}
-    volume: 0.105
-    pitch: 0.74
+    volume: 0.213
+    pitch: 0.72
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
   - name: Death
     clip: {fileID: 8300000, guid: dfe4aec6c3503024a81cfef4dc1f8183, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Points
+    clip: {fileID: 8300000, guid: ca52b1f48f75dd846b3b2dc6211f0d79, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0

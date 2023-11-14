@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 4869726024630997295}
   - component: {fileID: 2394089316221281433}
   - component: {fileID: 1436525953762126213}
+  - component: {fileID: 2010303344770062495}
+  - component: {fileID: 8379547511250338341}
   m_Layer: 0
   m_Name: Woman
-  m_TagString: Respawn
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e4ab738c3a9c842b69fa93cbbff0ea53, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9028111435c6746acb60089b99efcf8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,18 +122,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.46875}
+  m_Offset: {x: 0, y: 3.3880467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2.5, y: 2.9375}
+    oldSize: {x: 2.3125, y: 2.875}
     newSize: {x: 2.5, y: 2.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.9375}
+  m_Size: {x: 2.5, y: 0.84536433}
   m_EdgeRadius: 0
 --- !u!50 &4869726024630997295
 Rigidbody2D:
@@ -194,3 +196,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2010303344770062495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371224306935375580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7d2424f9ccc0b429805cad235493af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Dialogue
+    clip: {fileID: 8300000, guid: ef5b8265cd7e8364b87f76415e6fae3e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+--- !u!114 &8379547511250338341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371224306935375580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52167f440644c0749905a3023ee3b98e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onObstacleDodged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2394089316221281433}
+        m_TargetAssemblyTypeName: NPCBehavior, Assembly-CSharp
+        m_MethodName: OnPlayerPassed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

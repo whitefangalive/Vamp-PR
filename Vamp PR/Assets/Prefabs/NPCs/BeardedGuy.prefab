@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 1727298065613559123}
   - component: {fileID: 8637764833580876645}
   - component: {fileID: 2023298612543259161}
+  - component: {fileID: 2874862716535105367}
+  - component: {fileID: 1315886336312898389}
   m_Layer: 0
   m_Name: BeardedGuy
-  m_TagString: Respawn
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.46875}
+  m_Offset: {x: 0, y: 3.3880467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -131,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.9375}
+  m_Size: {x: 2.5, y: 0.84536433}
   m_EdgeRadius: 0
 --- !u!50 &1727298065613559123
 Rigidbody2D:
@@ -194,3 +196,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2874862716535105367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114055608996007248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7d2424f9ccc0b429805cad235493af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Dialogue
+    clip: {fileID: 8300000, guid: b2805427182226146b84ce6d5de0623c, type: 3}
+    volume: 1
+    pitch: 0.6
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+--- !u!114 &1315886336312898389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114055608996007248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52167f440644c0749905a3023ee3b98e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onObstacleDodged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8637764833580876645}
+        m_TargetAssemblyTypeName: NPCBehavior, Assembly-CSharp
+        m_MethodName: OnPlayerPassed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
