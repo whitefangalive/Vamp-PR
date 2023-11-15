@@ -47,6 +47,6 @@ MonoBehaviour:
   objectPrefabs: []
   objectTag: 
   player: {fileID: 0}
-  spawnDistanceInterval: 20
+  spawnDistanceInterval: 40
   spawnOffset: {x: 50, y: 2.5, z: 0}
   despawnOffset: 50

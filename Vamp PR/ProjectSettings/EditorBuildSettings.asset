@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu2.unity
     guid: 9976c3f196ce026428c5cfe7a81dff7a
-  - enabled: 0
-    path: Assets/Scenes/Main Menu.unity
-    guid: bf6c9e6c1f330e84bb142a0464e439e9
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: e8a7690310f2133429ab7403fb4e22a8
+  - enabled: 0
+    path: Assets/Scenes/Main Menu.unity
+    guid: bf6c9e6c1f330e84bb142a0464e439e9
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/RespawnScene.unity
     guid: e0602544a7115cd45bb33e2fa030f1d7
+  - enabled: 1
+    path: Assets/Scenes/GameSceneEasy.unity
+    guid: efc582fdfb1e3d748ac1705b5022a89c
   m_configObjects: {}

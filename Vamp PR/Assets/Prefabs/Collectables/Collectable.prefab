@@ -208,6 +208,10 @@ PrefabInstance:
       propertyPath: icon
       value: 
       objectReference: {fileID: 21300000, guid: 52c5057146438384a958e1a21a0a8ea0, type: 3}
+    - target: {fileID: 3050481990754311666, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: obstaclePoints
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6655067936404284068, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
       propertyPath: m_Name
       value: ObstacleDodgedTrigger

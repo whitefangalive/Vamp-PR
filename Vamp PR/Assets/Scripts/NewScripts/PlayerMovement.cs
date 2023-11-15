@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(movement);
 
         // Jumping
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if ((Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0)) && isGrounded)
         {
             Jump();
         }
