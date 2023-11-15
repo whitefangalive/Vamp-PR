@@ -7,8 +7,8 @@ public class NPCBehavior : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isWalking = false;
     private float timeSinceLastAction = 0f;
-    private float timeToIdle = 3f; // Adjust this to control how long the NPC stands still or walks
-    public float walkSpeed = 2f; // Adjust this to control the walking speed
+    private float timeToIdle = 3f; // Default time to idle
+    private float walkSpeed = 2f; // Default walking speed
 
     private AudioManager audioManager;
 
@@ -28,6 +28,9 @@ public class NPCBehavior : MonoBehaviour
         // Get the SpriteRenderer component attached to the NPC GameObject
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        // Randomize the initial walk speed and duration
+        RandomizeWalkParameters();
+
         // Start in the idle state
         SetIdleState();
     }
@@ -43,18 +46,15 @@ public class NPCBehavior : MonoBehaviour
             // Toggle between walking and standing still
             ToggleState();
         }
-
-        // Move the NPC when in the walking state
-        if (isWalking)
-        {
-            Move();
-        }
     }
 
     private void ToggleState()
     {
         // Reset the timer
         timeSinceLastAction = 0f;
+
+        // Randomize walk parameters
+        RandomizeWalkParameters();
 
         // Toggle between walking and standing still
         if (isWalking)
@@ -101,10 +101,11 @@ public class NPCBehavior : MonoBehaviour
         rb.velocity = Vector2.zero;
     }
 
-    private void Move()
+    private void RandomizeWalkParameters()
     {
-        // The NPC is moved in SetWalkingState, so this method is empty
-        // It's here to maintain a consistent structure with the 3D version
+        // Randomize walk speed and time to idle
+        walkSpeed = Random.Range(1f, 3f); // Adjust min and max values as needed
+        timeToIdle = Random.Range(2f, 6f); // Adjust min and max values as needed
     }
 
     public void OnPlayerPassed()
@@ -121,5 +122,4 @@ public class NPCBehavior : MonoBehaviour
             audioManager.Play("Dialogue");
         }
     }
-
 }

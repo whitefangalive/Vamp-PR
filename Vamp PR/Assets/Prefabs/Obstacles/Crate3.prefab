@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8660261917334426863}
   - component: {fileID: 5328027731918139744}
   - component: {fileID: 4122946190000858834}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Barrel1 (2)
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 3270636616550318531}
   - component: {fileID: 5313160090138486115}
   - component: {fileID: 3403035641499147999}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Crate3
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54, y: 0.54, z: 0.54}
+  m_LocalScale: {x: 0.73, y: 0.73, z: 0.73}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7273327471924436139}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 7273327471924436139}
   - component: {fileID: 6052997907624942398}
   - component: {fileID: 4204174418348997055}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Barrel1 (1)
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 1340853057040295415}
   - component: {fileID: 1635371378543760393}
   - component: {fileID: 7130155735026973417}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Barrel1 (3)
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -594,6 +594,10 @@ PrefabInstance:
     - target: {fileID: 6655067936404284068, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
       propertyPath: m_Name
       value: ObstacleDodgedTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655067936404284068, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

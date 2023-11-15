@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1508714097306538276}
   - component: {fileID: 6590787150730837886}
   - component: {fileID: 4143109625963835797}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hatman
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ec98dfcaeed074b94942a6403307f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
 --- !u!95 &1508714097306538276
 Animator:
   serializedVersion: 5

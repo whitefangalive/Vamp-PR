@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2023298612543259161}
   - component: {fileID: 2874862716535105367}
   - component: {fileID: 1315886336312898389}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BeardedGuy
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ec98dfcaeed074b94942a6403307f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
 --- !u!95 &2023298612543259161
 Animator:
   serializedVersion: 5

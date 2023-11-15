@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2176450739643043129}
   - component: {fileID: 420201873187772137}
   - component: {fileID: 2681010345056644014}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collectable
   m_TagString: Litter
   m_Icon: {fileID: 0}
@@ -211,6 +211,10 @@ PrefabInstance:
     - target: {fileID: 6655067936404284068, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
       propertyPath: m_Name
       value: ObstacleDodgedTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655067936404284068, guid: f5c690d6df9b18e41a911672514fe8ff, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

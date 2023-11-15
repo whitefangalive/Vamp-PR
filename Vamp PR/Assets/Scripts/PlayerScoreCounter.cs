@@ -19,7 +19,9 @@ public class PlayerScoreCounter : MonoBehaviour
 
     private AudioManager audioManager;
 
-    // private int 
+    // Shake parameters
+    private float shakeDuration = 0.2f;
+    private float shakeMagnitude = 3f;
 
     void Awake()
     {
@@ -38,6 +40,7 @@ public class PlayerScoreCounter : MonoBehaviour
         AddPoints(points);
         StartCoroutine(DisplayGainedPoints(points, icon));
         UpdateScoreText();
+        StartCoroutine(ShakeScoreText());
     }
 
     public void AddPoints(int pointsAmount=10)
@@ -59,14 +62,27 @@ public class PlayerScoreCounter : MonoBehaviour
         Destroy(newPointsObject);
     }
 
-    // public void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("ObstacleDodgedTrigger"))
-    //     {
-    //         playerScore+=GenerateRandomNumber();
-    //         UpdateScoreText();
-    //     }
-    // }
+    private IEnumerator ShakeScoreText()
+    {
+        Transform scoreTextTransform = scoreText.transform;
+        Vector3 originalPosition = scoreTextTransform.localPosition;
+
+        float elapsed = 0.0f;
+
+        while (elapsed < shakeDuration)
+        {
+            float x = originalPosition.x + Random.Range(-1f, 1f) * shakeMagnitude;
+            float y = originalPosition.y + Random.Range(-1f, 1f) * shakeMagnitude;
+
+            scoreTextTransform.localPosition = new Vector3(x, y, originalPosition.z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        scoreTextTransform.localPosition = originalPosition; // Reset to the original position
+    }
 
     private int GenerateRandomNumber()
     {
