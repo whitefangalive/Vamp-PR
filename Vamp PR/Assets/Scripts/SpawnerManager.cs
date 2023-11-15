@@ -13,7 +13,7 @@ public class SpawnerManager : MonoBehaviour
     void Start()
     {
         // Initialize the next spawn distance.
-        ActivateSpawners();
+        // ActivateSpawners();
         nextSpawnDistance = player.position.x + GetAverageSpawnDistanceInterval();
     }
 
@@ -38,7 +38,7 @@ public class SpawnerManager : MonoBehaviour
         // Special Condition: Old man collectable
         if (coinToss < 0.2f)
         {
-            ToggleAllSpawners(false);
+            ToggleAllSpawners(false, ignore: "CollectableSpawner");
             SpawnGivenObjectFromSpawner("CollectableSpawner", "oldManCrossing");
         }
         else if(coinToss < 0.5)
@@ -94,10 +94,16 @@ public class SpawnerManager : MonoBehaviour
         }
     }
 
-    private void ToggleAllSpawners(bool allow)
+    // private void ToggleSpawner(bool allow, string spawnerName="default")
+    // {
+    //     spawnerList.Find(s => s.name == spawnerName).ToggleSpawn()
+    // }
+
+    private void ToggleAllSpawners(bool allow, string ignore="default")
     {
         foreach(GameObject spawner in spawnerList)
         {
+            if(spawner.name == ignore) continue;
             spawner.GetComponent<ObjectSpawner>().ToggleSpawn(allow);
         }
     }

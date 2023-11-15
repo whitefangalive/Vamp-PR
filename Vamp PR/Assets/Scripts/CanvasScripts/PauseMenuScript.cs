@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseMenuScript : MonoBehaviour
 {
-
+    public AudioManager audioManager;
     public GameObject pauseCanvas;
 
     private bool isPaused;
@@ -13,6 +13,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            audioManager.Play("Button");
             if (isPaused) Unpause();
             else Pause();
         }
@@ -27,12 +28,14 @@ public class PauseMenuScript : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         pauseCanvas.SetActive(true);
+        isPaused = true;
     }
 
     private void Unpause()
     {
         Time.timeScale = 1.0f;
         pauseCanvas.SetActive(false);
+        isPaused = false;
     }
 
     public void LoadScene(int sceneIndex)

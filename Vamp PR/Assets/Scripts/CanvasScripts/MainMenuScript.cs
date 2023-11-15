@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MainMenuScript : MonoBehaviour
 {
-
     private LevelLoader levelLoader;
 
     private void Awake()

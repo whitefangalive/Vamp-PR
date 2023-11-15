@@ -114,7 +114,7 @@ public class NPCBehavior : MonoBehaviour
         float randomValue = Random.value;
 
         // Adjust this threshold to control the probability of playing the sound
-        float soundProbability = 0.9f;
+        float soundProbability = 0.3f;
 
         if (randomValue < soundProbability)
         {

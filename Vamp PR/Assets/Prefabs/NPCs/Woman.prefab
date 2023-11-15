@@ -211,7 +211,7 @@ MonoBehaviour:
   - name: Dialogue
     clip: {fileID: 8300000, guid: ef5b8265cd7e8364b87f76415e6fae3e, type: 3}
     volume: 1
-    pitch: 1
+    pitch: 1.05
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
