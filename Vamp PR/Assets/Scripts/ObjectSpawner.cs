@@ -66,7 +66,7 @@ public class ObjectSpawner : MonoBehaviour
         }
 
         // Calculate the position to spawn the object.
-        float randomXOffset = Random.Range(-15f, 15f); // Adjust the range as needed
+        float randomXOffset = Random.Range(-5f, 5f); // Adjust the range as needed
         Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset.x + randomXOffset, spawnOffset.y, spawnOffset.z);
 
         // Spawn the selected object at the calculated position, setting the parent to this transform
