@@ -1972,7 +1972,7 @@ GameObject:
   - component: {fileID: 6843631113066029780}
   - component: {fileID: 6843631113066029779}
   - component: {fileID: 6843631113066029781}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2292,7 +2292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4544064393549157945}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ceilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -2309,7 +2309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6974556560336708145}
   - component: {fileID: 1846058907110440383}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: playerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2902,7 +2902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3911209910782498432}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}

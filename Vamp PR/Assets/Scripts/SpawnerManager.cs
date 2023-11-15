@@ -33,10 +33,18 @@ public class SpawnerManager : MonoBehaviour
 
         float coinToss = Random.value;
 
+        ToggleAllSpawners(true);
+
         // Special Condition: Old man collectable
         if (coinToss < 0.2f)
         {
+            ToggleAllSpawners(false);
             SpawnGivenObjectFromSpawner("CollectableSpawner", "oldManCrossing");
+        }
+        else if(coinToss < 0.5)
+        {
+            ToggleAllSpawners(false);
+            SpawnGivenObjectFromSpawner("NPCSpawner", "BeardedGuy");
         }
         else
         {
@@ -83,6 +91,14 @@ public class SpawnerManager : MonoBehaviour
         else
         {
             Debug.LogError("Spawner not found: " + spawnerName);
+        }
+    }
+
+    private void ToggleAllSpawners(bool allow)
+    {
+        foreach(GameObject spawner in spawnerList)
+        {
+            spawner.GetComponent<ObjectSpawner>().ToggleSpawn(allow);
         }
     }
 

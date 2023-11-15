@@ -11,22 +11,40 @@ public class ObjectSpawner : MonoBehaviour
     public float despawnOffset = 20.0f;
 
     private float nextSpawnDistance;
+    private bool allowSpawn = true; // Flag to control spawning
 
     private void Start()
     {
         // Initialize the next spawn distance.
-        // SpawnObject();
+        SpawnObject();
         nextSpawnDistance = player.position.x + spawnDistanceInterval;
     }
 
     private void Update()
     {
         if (player == null) return;
+
+        // Check if the player has traveled far enough to spawn a new object
+        if (allowSpawn && player.position.x >= nextSpawnDistance)
+        {
+            SpawnObject();
+        }
+
         DespawnObject();
     }
 
-    public void SpawnObject(string objectName="default", string ignore="default")
+    public void ToggleSpawn(bool allow)
     {
+        allowSpawn = allow;
+    }
+
+    public void SpawnObject(string objectName = "default", string ignore = "default")
+    {
+        if (!allowSpawn)
+        {
+            Debug.Log("Spawn is not allowed.");
+            return;
+        }
 
         GameObject selectedObject;
 
@@ -37,22 +55,24 @@ public class ObjectSpawner : MonoBehaviour
         else if (ignore != "default")
         {
             selectedObject = null;
-            while(selectedObject.name != ignore)
+            while (selectedObject.name != ignore)
             {
                 selectedObject = objectPrefabs.Find(s => s.name == objectName);
             }
         }
-        else 
+        else
         {
             selectedObject = objectPrefabs[Random.Range(0, objectPrefabs.Count)];
         }
-    
+
         // Calculate the position to spawn the object.
-        float randomXOffset = Random.Range(-10f, 10f); // Adjust the range as needed
+        float randomXOffset = Random.Range(-15f, 15f); // Adjust the range as needed
         Vector3 spawnPosition = new Vector3(player.position.x + spawnOffset.x + randomXOffset, spawnOffset.y, spawnOffset.z);
 
         // Spawn the selected object at the calculated position, setting the parent to this transform
         GameObject instantiatedObject = Instantiate(selectedObject, spawnPosition, Quaternion.identity, transform);
+
+        nextSpawnDistance = player.position.x + spawnDistanceInterval;
     }
 
     private void DespawnObject()
@@ -67,5 +87,4 @@ public class ObjectSpawner : MonoBehaviour
             }
         }
     }
-
 }
